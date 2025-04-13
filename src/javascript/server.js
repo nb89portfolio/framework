@@ -59,5 +59,5 @@ http
     }
 })
     .listen(port, function () {
-    console.log("Server running on port ".concat(port));
+    console.log("Server running on port ".concat(port, ", testing..."));
 });
