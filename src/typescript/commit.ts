@@ -24,7 +24,7 @@ const promptCommitMessage = async (): Promise<string> => {
   const commitMessage = await promptCommitMessage();
 
   exec(
-    `git add . && git commit -m "${commitMessage} && git push origin dev"`,
+    `git add . && git commit -m "${commitMessage}" && git push origin dev"`,
     (error, stdout, stderr) => {
       if (error) {
         console.error(`error: ${error.message}`);

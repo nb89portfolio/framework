@@ -65,7 +65,7 @@ var promptCommitMessage = function () { return __awaiter(void 0, void 0, void 0,
             case 0: return [4 /*yield*/, promptCommitMessage()];
             case 1:
                 commitMessage = _a.sent();
-                (0, child_process_1.exec)("git add . && git commit -m \"".concat(commitMessage, " && git push origin dev\""), function (error, stdout, stderr) {
+                (0, child_process_1.exec)("git add . && git commit -m \"".concat(commitMessage, "\" && git push origin dev\""), function (error, stdout, stderr) {
                     if (error) {
                         console.error("error: ".concat(error.message));
                         return;
