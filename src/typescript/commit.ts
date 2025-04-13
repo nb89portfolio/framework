@@ -1,30 +1,25 @@
 import { exec } from 'child_process';
 import { createInterface } from 'readline';
 
-/**
- * Prompts the user to enter a "Commit message" and returns the input.
- * @returns Promise<string>
- */
-const promptCommitMessage = async (): Promise<string> => {
-  const rl = createInterface({
+async function getCommitMessage(): Promise<string> {
+  const readLine = createInterface({
     input: process.stdin,
     output: process.stdout,
   });
 
   return new Promise((resolve) => {
-    rl.question('Enter commit message: ', (message) => {
-      rl.close();
+    readLine.question('Enter commit message: ', (message) => {
+      readLine.close();
       resolve(message);
     });
   });
-};
+}
 
-// Example Usage
-(async () => {
-  const commitMessage = await promptCommitMessage();
+async function commit() {
+  const message = await getCommitMessage();
 
   exec(
-    `git add . && git commit -m "${commitMessage}" && git push origin dev"`,
+    `git add . && git commit -m "${message}" && git push origin dev"`,
     (error, stdout, stderr) => {
       if (error) {
         console.error(`error: ${error.message}`);
@@ -37,4 +32,6 @@ const promptCommitMessage = async (): Promise<string> => {
       console.log(`stdout: ${stdout}`);
     }
   );
-})();
+}
+
+commit();
