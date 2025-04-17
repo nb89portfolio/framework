@@ -8,12 +8,8 @@ async function commit() {
       output: process.stdout,
     });
 
-    let test = '';
-
     readLine.question('Enter commit message: ', (answer) => {
       readLine.close();
-
-      test = answer;
 
       exec(
         `git add . && git commit -m "${answer}" && git push origin dev`,
@@ -30,8 +26,6 @@ async function commit() {
         }
       );
     });
-
-    console.log(test);
   } catch (error) {
     console.error(error);
   } finally {
