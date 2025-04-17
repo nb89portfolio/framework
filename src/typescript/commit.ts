@@ -13,6 +13,8 @@ async function commit() {
     readLine.question('Enter commit message: ', (answer) => {
       readLine.close();
 
+      test = answer;
+
       exec(
         `git add . && git commit -m "${answer}" && git push origin dev`,
         (error, stdout, stderr) => {
