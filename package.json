@@ -15,12 +15,7 @@
   "type": "commonjs",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "typescript": "tsc",
-    "commit": "npm run typescript && node ./src/javascript/commit.js",
-    "watch": "node ./src/javascript/watch.js",
-    "serve": "node ./src/javascript/server.js",
-    "build": "npm run typescript && npm run watch"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@types/node": "^22.14.0"

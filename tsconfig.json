@@ -4,8 +4,8 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "module": "commonjs",
-    "outDir": "./src/javascript",
-    "rootDir": "./src/typescript",
+    "outDir": "./src",
+    "rootDir": "./src",
     "strict": true
   },
   "include": ["./src/**/*"],
