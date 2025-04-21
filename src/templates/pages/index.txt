@@ -1,0 +1,15 @@
+<client>
+    <styles></styles>
+    <template></template>
+    <scripts></scripts>
+</client>
+
+<server></server>
+
+<database>
+    <generate></generate>
+    <migrate></migrate>
+    <create></create>
+    <read></read>
+    <delete></delete>
+</database>
