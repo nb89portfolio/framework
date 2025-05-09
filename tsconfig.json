@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
-    "incremental": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "module": "commonjs",
-    "outDir": "./src",
+    "module": "CommonJS",
+    "outDir": "src/lib/build/typescript",
     "rootDir": "./src",
     "strict": true
   },
   "include": ["./src/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules, src/lib/build"]
 }

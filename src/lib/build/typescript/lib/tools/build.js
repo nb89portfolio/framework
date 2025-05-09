@@ -1,9 +1,9 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-function watch() {
+function build() {
     try {
     }
     catch (error) {
         console.error(error);
     }
 }
+build();

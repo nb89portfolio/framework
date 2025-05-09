@@ -16,7 +16,8 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "commit": "tsc && node ./src/lib/tools/gitCommit"
+    "commit": "tsc && node src/lib/build/typescript/lib/tools/gitCommit",
+    "dev": "tsc && node src/lib/build/typescript/lib/tools/watch.js"
   },
   "dependencies": {
     "@types/node": "^22.14.0"
