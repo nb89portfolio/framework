@@ -3,3 +3,4 @@
 /src/build
 /.env
 /src/javascript
+/env.d.ts

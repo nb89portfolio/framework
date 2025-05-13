@@ -5,7 +5,8 @@
     "module": "CommonJS",
     "outDir": "src/lib/build/typescript",
     "rootDir": "./src",
-    "strict": true
+    "strict": true,
+    "typeRoots": ["./env.d.ts", "./node_modules/@types"]
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules, src/lib/build"]

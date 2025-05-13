@@ -35,7 +35,7 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs = __importStar(require("fs"));
 var child_process_1 = require("child_process");
-var directoryToWatch = './src';
+var directoryToWatch = process.env.SOURCE_DIRECTORY;
 var serverProcess = null;
 var startServer = function () {
     if (serverProcess) {
@@ -46,10 +46,12 @@ var startServer = function () {
         stdio: 'inherit',
     });
 };
-fs.watch(directoryToWatch, { recursive: true }, function (eventType, filename) {
-    if (filename) {
-        console.log("File changed: ".concat(filename));
-        startServer();
-    }
-});
+if (directoryToWatch !== undefined) {
+    fs.watch(directoryToWatch, { recursive: true }, function (eventType, filename) {
+        if (filename) {
+            console.log("File changed: ".concat(filename));
+            startServer();
+        }
+    });
+}
 startServer();

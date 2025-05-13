@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import { spawn, ChildProcess } from 'child_process';
 
-const directoryToWatch = './src';
+const directoryToWatch = process.env.SOURCE_DIRECTORY;
 let serverProcess: ChildProcess | null = null;
 
 const startServer = () => {
@@ -19,11 +19,13 @@ const startServer = () => {
   );
 };
 
-fs.watch(directoryToWatch, { recursive: true }, (eventType, filename) => {
-  if (filename) {
-    console.log(`File changed: ${filename}`);
-    startServer();
-  }
-});
+if (directoryToWatch !== undefined) {
+  fs.watch(directoryToWatch, { recursive: true }, (eventType, filename) => {
+    if (filename) {
+      console.log(`File changed: ${filename}`);
+      startServer();
+    }
+  });
+}
 
 startServer();
