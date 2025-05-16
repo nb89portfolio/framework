@@ -3,13 +3,14 @@ import readline from 'readline';
 
 function gitCommit(): void {
   try {
-    const rl = readline.createInterface({
+    const instance = readline.createInterface({
       input: process.stdin,
       output: process.stdout,
     });
 
-    rl.question('Commit message: ', (message) => {
-      rl.close();
+    instance.question('Commit message: ', (message) => {
+      instance.close();
+
       exec(
         `git add . && git commit -m "${message}" && git push origin dev`,
         (error, stdout, stderr) => {

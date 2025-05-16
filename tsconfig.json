@@ -3,7 +3,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "module": "CommonJS",
-    "outDir": "src/lib/build/typescript",
+    "outDir": "src/build/typescript",
     "rootDir": "./src",
     "strict": true,
     "typeRoots": ["./env.d.ts", "./node_modules/@types"]
